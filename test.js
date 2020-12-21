@@ -1,18 +1,22 @@
 import Ash from './index.js';
 
 
-const element = (
+const element = Ash.createElement(
+  "div", 
+  null, 
   Ash.createElement(
-    "div",
-    {
-      style:"border: 10px solid black"
-    }
+    "h1", {
+      className: "primary"
+    }, 
+    "QndReact is Quick and dirty react"
+  ), 
+  Ash.createElement(
+    "p", 
+    null, 
+    "It is about building your own React in 90 lines of JavsScript"
   )
-  // Ash.createElement('div', 
-  // {
-
-  // }
-  // , "Hello")
 );
+
+
 const container = document.getElementById("root");
 Ash.render(element, container);

@@ -1,24 +1,30 @@
-function createElement( type, props, ...children){
-    return {
-        type,
-        props: {
-            ...props,
-            children: children.map(child=>
-                typeof child === "object" ? child : createTextElement(child)
-            )
-        },
+function createElement(type, props, ...children) {
+  return {
+    type,
+    props: {
+      ...props,
+      children: children.map(child =>
+        typeof child === "object" ? child : createTextElement(child)
+      )
     }
+  };
 }
 
-function createTextElement(text){
+function createTextElement(text) {
     return {
-        type: "TEXT_ElEMENT",
+        type: "TEXT_ELEMENT",
         props: {
-            nodevalue: text,
+            nodeValue: text,
             children: [],
         },
-    }
+    };
 }
+
+
+// function createTextElement(text){
+//     return {
+//     }
+// }
 
 
 export default createElement;
